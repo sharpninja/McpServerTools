@@ -1,0 +1,7 @@
+{
+  "name": "file-search",
+  "description": "Search for files by name pattern or content regex across a directory tree",
+  "tags": ["search", "find", "files", "grep", "regex"],
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\",\"description\":\"Root directory to search\"},\"pattern\":{\"type\":\"string\",\"description\":\"File name glob pattern\"},\"content\":{\"type\":\"string\",\"description\":\"Content regex to match inside files\"},\"maxDepth\":{\"type\":\"integer\",\"default\":10}},\"required\":[\"path\"]}",
+  "commandTemplate": "find {{path}} -maxdepth {{maxDepth}} -name '{{pattern}}' -exec grep -l '{{content}}' {} +"
+}

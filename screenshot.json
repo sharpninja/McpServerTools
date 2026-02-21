@@ -1,0 +1,7 @@
+{
+  "name": "screenshot",
+  "description": "Capture a screenshot of a URL or the current screen using headless Chrome or native OS tools",
+  "tags": ["screenshot", "capture", "browser", "image", "visual"],
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"URL to capture\"},\"output\":{\"type\":\"string\",\"description\":\"Output file path\"},\"width\":{\"type\":\"integer\",\"default\":1280},\"height\":{\"type\":\"integer\",\"default\":720}},\"required\":[\"url\"]}",
+  "commandTemplate": "npx capture-website-cli {{url}} --output={{output}} --width={{width}} --height={{height}}"
+}

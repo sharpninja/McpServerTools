@@ -1,0 +1,7 @@
+{
+  "name": "web-fetch",
+  "description": "Fetch and extract readable content from a web page URL",
+  "tags": ["web", "fetch", "http", "scrape", "content"],
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"URL to fetch\"},\"selector\":{\"type\":\"string\",\"description\":\"Optional CSS selector to extract specific content\"}},\"required\":[\"url\"]}",
+  "commandTemplate": "curl -sL {{url}}"
+}
