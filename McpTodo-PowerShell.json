@@ -1,0 +1,7 @@
+{
+  "name": "McpTodo-PowerShell",
+  "description": "PowerShell module for MCP Todo API. Provides cmdlets: Initialize-McpTodo, Get-McpTodo, Get-McpTodoPrompt, New-McpTodo, Update-McpTodo, Complete-McpTodo, Remove-McpTodo, Add-McpTodoRequirements. Save to McpTodo.psm1 and Import-Module.",
+  "tags": ["powershell", "module", "todo", "tracking"],
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"action\":{\"type\":\"string\",\"enum\":[\"download\",\"info\"]}}}",
+  "commandTemplate": "Save this module to McpTodo.psm1, then: Import-Module ./McpTodo.psm1; Initialize-McpTodo"
+}

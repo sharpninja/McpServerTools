@@ -1,0 +1,7 @@
+{
+  "name": "McpTodo-Bash",
+  "description": "Bash functions for MCP Todo API. Provides: mcp_todo_init, mcp_todo_list, mcp_todo_get, mcp_todo_prompt, mcp_todo_create, mcp_todo_create_full, mcp_todo_update, mcp_todo_complete, mcp_todo_delete, mcp_todo_add_requirements. Requires jq.",
+  "tags": ["bash", "module", "todo", "tracking"],
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"action\":{\"type\":\"string\",\"enum\":[\"download\",\"info\"]}}}",
+  "commandTemplate": "Save this module to mcp-todo.sh, then: source ./mcp-todo.sh; mcp_todo_init"
+}

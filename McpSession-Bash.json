@@ -1,0 +1,7 @@
+{
+  "name": "McpSession-Bash",
+  "description": "Bash functions for MCP Session Log API. Provides: mcp_session_init, mcp_session_create, mcp_session_update, mcp_session_complete, mcp_session_add_entry, mcp_session_update_entry, mcp_session_add_action, mcp_session_add_file, mcp_session_add_tag, mcp_session_send_dialog. Requires jq.",
+  "tags": ["bash", "module", "session", "logging"],
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"action\":{\"type\":\"string\",\"enum\":[\"download\",\"info\"]}}}",
+  "commandTemplate": "Save this module to mcp-session.sh, then: source ./mcp-session.sh; mcp_session_init"
+}

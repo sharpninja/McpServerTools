@@ -1,0 +1,7 @@
+{
+  "name": "McpSession-PowerShell",
+  "description": "PowerShell module for MCP Session Log API. Provides cmdlets: Initialize-McpSession, New-McpSessionLog, Update-McpSessionLog, Get-McpSessionLog, Add-McpSessionEntry, Set-McpSessionEntry, Add-McpAction, Send-McpDialog. Save to McpSession.psm1 and Import-Module.",
+  "tags": ["powershell", "module", "session", "logging"],
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"action\":{\"type\":\"string\",\"enum\":[\"download\",\"info\"]}}}",
+  "commandTemplate": "Save this module to McpSession.psm1, then: Import-Module ./McpSession.psm1; Initialize-McpSession"
+}
