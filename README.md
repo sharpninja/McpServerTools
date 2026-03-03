@@ -27,7 +27,7 @@ tool-name.json
 ### Register this bucket with MCP Server
 
 ```bash
-curl -X POST http://localhost:7147/mcp/tools/buckets \
+curl -X POST http://localhost:7147/mcpserver/tools/buckets \
   -H "Content-Type: application/json" \
   -d '{
     "name": "official",
@@ -41,19 +41,19 @@ curl -X POST http://localhost:7147/mcp/tools/buckets \
 ### Browse available tools
 
 ```bash
-curl http://localhost:7147/mcp/tools/buckets/official/browse
+curl http://localhost:7147/mcpserver/tools/buckets/official/browse
 ```
 
 ### Install a tool from this bucket
 
 ```bash
-curl -X POST "http://localhost:7147/mcp/tools/buckets/official/install?toolName=screenshot"
+curl -X POST "http://localhost:7147/mcpserver/tools/buckets/official/install?toolName=screenshot"
 ```
 
 ### Sync to pick up updates
 
 ```bash
-curl -X POST http://localhost:7147/mcp/tools/buckets/official/sync
+curl -X POST http://localhost:7147/mcpserver/tools/buckets/official/sync
 ```
 
 ## Contributing
