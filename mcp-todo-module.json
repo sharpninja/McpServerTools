@@ -1,0 +1,7 @@
+{
+  "name": "mcp-todo-module",
+  "description": "Download the McpTodo.psm1 PowerShell helper module from the develop branch of sharpninja/McpServer.",
+  "tags": ["mcp", "todo", "powershell", "module", "bootstrap"],
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"outputPath\":{\"type\":\"string\",\"description\":\"Local path where McpTodo.psm1 should be saved\"}},\"required\":[\"outputPath\"]}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sharpninja/McpServer/develop/tools/powershell/McpTodo.psm1' -OutFile '{{outputPath}}'\""
+}
