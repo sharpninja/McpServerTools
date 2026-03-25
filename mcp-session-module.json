@@ -1,7 +1,7 @@
 {
   "name": "mcp-session-module",
-  "description": "Download the McpSession.psm1 PowerShell helper module from sharpninja/McpServer release tag mcp-server-v1.0.223.0.",
+  "description": "Download the McpSession.psm1 PowerShell helper module from the develop branch of sharpninja/McpServer.",
   "tags": ["mcp", "session", "powershell", "module", "bootstrap"],
   "parameterSchema": "{\"type\":\"object\",\"properties\":{\"outputPath\":{\"type\":\"string\",\"description\":\"Local path where McpSession.psm1 should be saved\"}},\"required\":[\"outputPath\"]}",
-  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sharpninja/McpServer/mcp-server-v1.0.223.0/tools/powershell/McpSession.psm1' -OutFile '{{outputPath}}'\""
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sharpninja/McpServer/develop/tools/powershell/McpSession.psm1' -OutFile '{{outputPath}}'\""
 }

@@ -1,6 +1,6 @@
 {
   "name": "McpSession-PowerShell",
-  "description": "PowerShell module for the MCP Session Log API. Provides cmdlets: Initialize-McpSession, New-McpSessionLogSlug, New-McpSessionLog, Update-McpSessionLog, Get-McpSessionLog, Add-McpSessionTurn, Set-McpSessionTurn, Add-McpAction, Add-McpTurnDetail, Send-McpDialog. Persists and submits canonical turns-only session-log payloads. Save to McpSession.psm1 and Import-Module.",
+  "description": "PowerShell module for the MCP Session Log API. Provides cmdlets: Initialize-McpSession, New-McpSessionLogSlug, New-McpSessionLog, Update-McpSessionLog, Get-McpSessionLog, Add-McpSessionTurn, Set-McpSessionTurn, Add-McpAction, Add-McpTurnDetail, Send-McpDialog. Persists canonical turns-only session-log payloads, mirrors the active session to .mcpSession/current-session.json, and resolves that cache before falling back to the legacy .mcpServer/session.yaml wrapper. Save to McpSession.psm1 and Import-Module.",
   "tags": ["powershell", "module", "session", "logging"],
   "parameterSchema": "{\"type\":\"object\",\"properties\":{\"action\":{\"type\":\"string\",\"enum\":[\"download\",\"info\"]}}}",
   "commandTemplate": "Save this module to McpSession.psm1, then: Import-Module ./McpSession.psm1; Initialize-McpSession"
