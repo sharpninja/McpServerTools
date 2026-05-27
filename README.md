@@ -10,6 +10,15 @@ Each tool is defined as a JSON manifest file in the root directory:
 tool-name.json
 ```
 
+Distribution artifacts live beside the manifests:
+
+```
+powershell/
+packages/
+```
+
+The `powershell/` directory contains the current McpServer helper modules published by this bucket. The `packages/` directory contains the current `SharpNinja.McpServer.Repl` NuGet global-tool package used by the `mcpserver-repl` manifest.
+
 ### Manifest Format
 
 ```json

@@ -1,0 +1,11 @@
+{
+  "name": "mcpserver-repl",
+  "description": "Install or refresh the current SharpNinja.McpServer.Repl 6.1.1 .NET global tool distribution from the official McpServerTools bucket.",
+  "tags": ["mcp", "repl", "stdio", "dotnet", "global-tool", "session-log", "todo", "requirements"],
+  "version": "6.1.1",
+  "sourceCommit": "e46d3b954b3e90e7f1ea4073fa4b0b4dc0522264",
+  "artifactSha256": "DD1AB2C77376BDA523F5D11A6E85954BD1F4CA49B6795B3D898CC8FA5955FFB9",
+  "artifactUrl": "https://raw.githubusercontent.com/sharpninja/McpServerTools/main/packages/SharpNinja.McpServer.Repl.6.1.1.nupkg",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{}}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $version='6.1.1'; $pkg='SharpNinja.McpServer.Repl'; $dir=Join-Path $env:TEMP 'mcpserver-repl-6.1.1'; New-Item -ItemType Directory -Force -Path $dir | Out-Null; $nupkg=Join-Path $dir 'SharpNinja.McpServer.Repl.6.1.1.nupkg'; Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sharpninja/McpServerTools/main/packages/SharpNinja.McpServer.Repl.6.1.1.nupkg' -OutFile $nupkg; $installed=dotnet tool list -g | Select-String -Quiet '^sharpninja\\.mcpserver\\.repl\\s'; if($installed){ dotnet tool uninstall --global $pkg | Out-Null }; dotnet tool install --global $pkg --version $version --add-source $dir; mcpserver-repl --version\""
+}

@@ -1,0 +1,11 @@
+{
+  "name": "mcp-context-module",
+  "description": "Download the current McpContext.psm1 PowerShell helper module from the official McpServerTools bucket.",
+  "tags": ["mcp", "context", "powershell", "module", "bootstrap", "search"],
+  "version": "2026.05.27",
+  "sourceCommit": "e46d3b954b3e90e7f1ea4073fa4b0b4dc0522264",
+  "artifactSha256": "B4B09738846801D42588E07C1F1E47774D2C7A633B11E221A5D2E89C2667F507",
+  "artifactUrl": "https://raw.githubusercontent.com/sharpninja/McpServerTools/main/powershell/McpContext.psm1",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"outputPath\":{\"type\":\"string\",\"description\":\"Local path where McpContext.psm1 should be saved\"}},\"required\":[\"outputPath\"]}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sharpninja/McpServerTools/main/powershell/McpContext.psm1' -OutFile '{{outputPath}}'\""
+}

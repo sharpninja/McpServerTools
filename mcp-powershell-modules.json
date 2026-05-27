@@ -1,0 +1,10 @@
+{
+  "name": "mcp-powershell-modules",
+  "description": "Download the current McpSession.psm1, McpTodo.psm1, and McpContext.psm1 helper modules from the official McpServerTools bucket.",
+  "tags": ["mcp", "powershell", "modules", "session", "todo", "context", "bootstrap"],
+  "version": "2026.05.27",
+  "sourceCommit": "e46d3b954b3e90e7f1ea4073fa4b0b4dc0522264",
+  "artifactSha256": "McpSession=EB8410CD6609294DE2FECC8E71BB1CD9D84808E060A0170952E0DE8453CB49E2;McpTodo=334F1DAE1BC0F89931A910EA937A32B47BB85B4BD6D24DCBD451AAD9EC07941B;McpContext=B4B09738846801D42588E07C1F1E47774D2C7A633B11E221A5D2E89C2667F507",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"outputDirectory\":{\"type\":\"string\",\"description\":\"Directory where the PowerShell modules should be saved\"}},\"required\":[\"outputDirectory\"]}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $dir='{{outputDirectory}}'; New-Item -ItemType Directory -Force -Path $dir | Out-Null; Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sharpninja/McpServerTools/main/powershell/McpSession.psm1' -OutFile (Join-Path $dir 'McpSession.psm1'); Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sharpninja/McpServerTools/main/powershell/McpTodo.psm1' -OutFile (Join-Path $dir 'McpTodo.psm1'); Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sharpninja/McpServerTools/main/powershell/McpContext.psm1' -OutFile (Join-Path $dir 'McpContext.psm1')\""
+}
