@@ -1,10 +1,12 @@
 {
   "name": "mcpserver-grok-plugin",
-  "description": "Locate the local Grok CLI/TUI plugin workspace for McpServer TODO, session log, requirements, GraphRAG, and workspace continuity. This plugin is local-only until a GitHub repository is published.",
-  "tags": ["mcp", "plugin", "grok", "local", "session-log", "todo", "requirements", "graphrag"],
+  "description": "Clone or update the Grok CLI/TUI plugin repository for McpServer TODO, session log, requirements, GraphRAG, and workspace continuity.",
+  "tags": ["mcp", "plugin", "grok", "session-log", "todo", "requirements", "graphrag"],
   "version": "0.0.1-13",
-  "repositoryStatus": "local-only",
+  "repositoryUrl": "https://github.com/sharpninja/mcpserver-grok-plugin",
+  "defaultBranch": "main",
   "localPathHint": "F:\\GitHub\\mcpserver-grok-plugin",
-  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"localPath\":{\"type\":\"string\",\"description\":\"Local path to the Grok plugin workspace; defaults to F:\\\\GitHub\\\\mcpserver-grok-plugin\"}}}",
-  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $path='{{localPath}}'; if([string]::IsNullOrWhiteSpace($path)){ $path='F:\\GitHub\\mcpserver-grok-plugin' }; if(-not (Test-Path $path)){ throw ($path + ' not found') }; Get-Item $path | Select-Object FullName\""
+  "sourceCommit": "32f849ddd3699d2644b2e600b5d3e4e2f11aa64f",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"targetParent\":{\"type\":\"string\",\"description\":\"Parent directory where the plugin repository should be cloned or updated\"}},\"required\":[\"targetParent\"]}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $parent='{{targetParent}}'; $name='mcpserver-grok-plugin'; $repo='https://github.com/sharpninja/mcpserver-grok-plugin.git'; New-Item -ItemType Directory -Force -Path $parent | Out-Null; $path=Join-Path $parent $name; if(Test-Path (Join-Path $path '.git')){ git -C $path pull --ff-only } elseif(Test-Path $path){ throw ($path + ' exists but is not a git repository') } else { git clone $repo $path }\""
 }
