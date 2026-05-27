@@ -1,0 +1,10 @@
+{
+  "name": "mcpserver-grok-plugin",
+  "description": "Locate the local Grok CLI/TUI plugin workspace for McpServer TODO, session log, requirements, GraphRAG, and workspace continuity. This plugin is local-only until a GitHub repository is published.",
+  "tags": ["mcp", "plugin", "grok", "local", "session-log", "todo", "requirements", "graphrag"],
+  "version": "0.0.1-13",
+  "repositoryStatus": "local-only",
+  "localPathHint": "F:\\GitHub\\mcpserver-grok-plugin",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"localPath\":{\"type\":\"string\",\"description\":\"Local path to the Grok plugin workspace; defaults to F:\\\\GitHub\\\\mcpserver-grok-plugin\"}}}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $path='{{localPath}}'; if([string]::IsNullOrWhiteSpace($path)){ $path='F:\\GitHub\\mcpserver-grok-plugin' }; if(-not (Test-Path $path)){ throw ($path + ' not found') }; Get-Item $path | Select-Object FullName\""
+}

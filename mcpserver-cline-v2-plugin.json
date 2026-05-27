@@ -1,0 +1,12 @@
+{
+  "name": "mcpserver-cline-v2-plugin",
+  "description": "Clone or update the Cline V2 AgentPlugin repository for McpServer TODO, session log, requirements, GraphRAG, workspace initialization, and failsafe replay workflows.",
+  "tags": ["mcp", "plugin", "cline", "cline-v2", "agentplugin", "session-log", "todo", "requirements", "graphrag"],
+  "version": "0.1.0",
+  "repositoryUrl": "https://github.com/sharpninja/mcpserver-cline-v2-plugin",
+  "defaultBranch": "main",
+  "localPathHint": "F:\\GitHub\\mcpserver-cline-v2-plugin",
+  "sourceCommit": "e2270164ce96f8d7f3e1895bc020a7010a3a6578",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"targetParent\":{\"type\":\"string\",\"description\":\"Parent directory where the plugin repository should be cloned or updated\"}},\"required\":[\"targetParent\"]}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $parent='{{targetParent}}'; $name='mcpserver-cline-v2-plugin'; $repo='https://github.com/sharpninja/mcpserver-cline-v2-plugin.git'; New-Item -ItemType Directory -Force -Path $parent | Out-Null; $path=Join-Path $parent $name; if(Test-Path (Join-Path $path '.git')){ git -C $path pull --ff-only } elseif(Test-Path $path){ throw ($path + ' exists but is not a git repository') } else { git clone $repo $path }\""
+}

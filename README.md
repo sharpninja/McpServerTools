@@ -19,6 +19,8 @@ packages/
 
 The `powershell/` directory contains the current McpServer helper modules published by this bucket. The `packages/` directory contains the current `SharpNinja.McpServer.Repl` NuGet global-tool package used by the `mcpserver-repl` manifest.
 
+The `mcpserver-*-plugin.json` manifests expose sibling agent plugin repositories. Published plugin repos clone or update from GitHub into a caller-provided parent directory. The Grok plugin entry is local-only until `sharpninja/mcpserver-grok-plugin` is published as a GitHub repository.
+
 ### Manifest Format
 
 ```json

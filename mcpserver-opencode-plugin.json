@@ -1,0 +1,12 @@
+{
+  "name": "mcpserver-opencode-plugin",
+  "description": "Clone or update the OpenCode plugin repository for McpServer TODO, session log, requirements, GraphRAG, workspace initialization, and failsafe replay workflows.",
+  "tags": ["mcp", "plugin", "opencode", "session-log", "todo", "requirements", "graphrag"],
+  "version": "0.1.0",
+  "repositoryUrl": "https://github.com/sharpninja/mcpserver-opencode-plugin",
+  "defaultBranch": "master",
+  "localPathHint": "F:\\GitHub\\mcpserver-opencode-plugin",
+  "sourceCommit": "1480460abec3a36526e6160863df6d89e45797f9",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"targetParent\":{\"type\":\"string\",\"description\":\"Parent directory where the plugin repository should be cloned or updated\"}},\"required\":[\"targetParent\"]}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $parent='{{targetParent}}'; $name='mcpserver-opencode-plugin'; $repo='https://github.com/sharpninja/mcpserver-opencode-plugin.git'; New-Item -ItemType Directory -Force -Path $parent | Out-Null; $path=Join-Path $parent $name; if(Test-Path (Join-Path $path '.git')){ git -C $path pull --ff-only } elseif(Test-Path $path){ throw ($path + ' exists but is not a git repository') } else { git clone $repo $path }\""
+}

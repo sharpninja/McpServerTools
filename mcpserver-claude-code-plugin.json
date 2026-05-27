@@ -1,0 +1,12 @@
+{
+  "name": "mcpserver-claude-code-plugin",
+  "description": "Clone or update the Claude Code plugin repository for McpServer session logging, TODO management, requirements tracking, and GraphRAG workflows.",
+  "tags": ["mcp", "plugin", "claude", "claude-code", "session-log", "todo", "requirements", "graphrag"],
+  "version": "0.0.1-13",
+  "repositoryUrl": "https://github.com/sharpninja/mcpserver-claude-code-plugin",
+  "defaultBranch": "main",
+  "localPathHint": "F:\\GitHub\\mcpserver-claude-code-plugin",
+  "sourceCommit": "3fae17c6ec97ca50c7e3de5f75d181e580032acb",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"targetParent\":{\"type\":\"string\",\"description\":\"Parent directory where the plugin repository should be cloned or updated\"}},\"required\":[\"targetParent\"]}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $parent='{{targetParent}}'; $name='mcpserver-claude-code-plugin'; $repo='https://github.com/sharpninja/mcpserver-claude-code-plugin.git'; New-Item -ItemType Directory -Force -Path $parent | Out-Null; $path=Join-Path $parent $name; if(Test-Path (Join-Path $path '.git')){ git -C $path pull --ff-only } elseif(Test-Path $path){ throw ($path + ' exists but is not a git repository') } else { git clone $repo $path }\""
+}
