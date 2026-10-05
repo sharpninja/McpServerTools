@@ -1,0 +1,21 @@
+{
+  "name": "qbrain-ai-codex-plugin",
+  "description": "Clone or update the OpenAI Codex plugin repository for QBrain.AI session logging, TODO management, requirements tracking, GraphRAG, and enforcement scripts. GitHub repository name stays the current name until the repository rename.",
+  "tags": [
+    "mcp",
+    "plugin",
+    "codex",
+    "openai",
+    "session-log",
+    "todo",
+    "requirements",
+    "graphrag"
+  ],
+  "version": "1.0.1-6",
+  "repositoryUrl": "https://github.com/sharpninja/mcpserver-codex-plugin",
+  "defaultBranch": "main",
+  "localPathHint": "F:\\GitHub\\mcpserver-codex-plugin",
+  "sourceCommit": "5a812f11bc6534aa9ffead26897ce60f2239a28c",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"targetParent\":{\"type\":\"string\",\"description\":\"Parent directory where the plugin repository should be cloned or updated\"}},\"required\":[\"targetParent\"]}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $parent='{{targetParent}}'; $name='mcpserver-codex-plugin'; $repo='https://github.com/sharpninja/mcpserver-codex-plugin.git'; New-Item -ItemType Directory -Force -Path $parent | Out-Null; $path=Join-Path $parent $name; if(Test-Path (Join-Path $path '.git')){ git -C $path pull --ff-only } elseif(Test-Path $path){ throw ($path + ' exists but is not a git repository') } else { git clone $repo $path }\""
+}

@@ -1,0 +1,21 @@
+{
+  "name": "qbrain-ai-claude-cowork-plugin",
+  "description": "Clone or update the Claude Cowork plugin repository for workspace-scoped QBrain.AI TODO, session log, requirements, and GraphRAG workflows. GitHub repository name stays the current name until the repository rename.",
+  "tags": [
+    "mcp",
+    "plugin",
+    "claude",
+    "cowork",
+    "session-log",
+    "todo",
+    "requirements",
+    "graphrag"
+  ],
+  "version": "0.0.1-13",
+  "repositoryUrl": "https://github.com/sharpninja/mcpserver-claude-cowork-plugin",
+  "defaultBranch": "main",
+  "localPathHint": "F:\\GitHub\\mcpserver-claude-cowork-plugin",
+  "sourceCommit": "19c060e1391a277781b037962d1e39be8017b249",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"targetParent\":{\"type\":\"string\",\"description\":\"Parent directory where the plugin repository should be cloned or updated\"}},\"required\":[\"targetParent\"]}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $parent='{{targetParent}}'; $name='mcpserver-claude-cowork-plugin'; $repo='https://github.com/sharpninja/mcpserver-claude-cowork-plugin.git'; New-Item -ItemType Directory -Force -Path $parent | Out-Null; $path=Join-Path $parent $name; if(Test-Path (Join-Path $path '.git')){ git -C $path pull --ff-only } elseif(Test-Path $path){ throw ($path + ' exists but is not a git repository') } else { git clone $repo $path }\""
+}

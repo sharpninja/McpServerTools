@@ -1,0 +1,20 @@
+{
+  "name": "qbrain-ai-grok-plugin",
+  "description": "Clone or update the Grok CLI/TUI plugin repository for QBrain.AI TODO, session log, requirements, GraphRAG, and workspace continuity. GitHub repository name stays the current name until the repository rename.",
+  "tags": [
+    "mcp",
+    "plugin",
+    "grok",
+    "session-log",
+    "todo",
+    "requirements",
+    "graphrag"
+  ],
+  "version": "0.0.1-13",
+  "repositoryUrl": "https://github.com/sharpninja/mcpserver-grok-plugin",
+  "defaultBranch": "main",
+  "localPathHint": "F:\\GitHub\\mcpserver-grok-plugin",
+  "sourceCommit": "32f849ddd3699d2644b2e600b5d3e4e2f11aa64f",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"targetParent\":{\"type\":\"string\",\"description\":\"Parent directory where the plugin repository should be cloned or updated\"}},\"required\":[\"targetParent\"]}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $parent='{{targetParent}}'; $name='mcpserver-grok-plugin'; $repo='https://github.com/sharpninja/mcpserver-grok-plugin.git'; New-Item -ItemType Directory -Force -Path $parent | Out-Null; $path=Join-Path $parent $name; if(Test-Path (Join-Path $path '.git')){ git -C $path pull --ff-only } elseif(Test-Path $path){ throw ($path + ' exists but is not a git repository') } else { git clone $repo $path }\""
+}
