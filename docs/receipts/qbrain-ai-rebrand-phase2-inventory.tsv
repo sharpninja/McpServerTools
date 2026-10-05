@@ -1,0 +1,5 @@
+path	line	pattern	class	action
+mcpserver-repl.json	2	mcpserver-repl	product-tool	alias-resolve
+mcpserver-repl.json	10	mcpserver-repl	product-tool	alias-resolve
+README.md	20	mcpserver-repl	product-tool	alias-resolve
+README.md	23	protocol	protocol	leave

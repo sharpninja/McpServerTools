@@ -1,0 +1,21 @@
+{
+  "name": "qbrain-ai-copilot-plugin",
+  "description": "Clone or update the GitHub Copilot plugin repository for QBrain.AI TODO, session log, requirements, GraphRAG, workspace, and enforcement workflows. GitHub repository name stays the current name until the repository rename.",
+  "tags": [
+    "mcp",
+    "plugin",
+    "copilot",
+    "github-copilot",
+    "session-log",
+    "todo",
+    "requirements",
+    "graphrag"
+  ],
+  "version": "1.0.1-6",
+  "repositoryUrl": "https://github.com/sharpninja/mcpserver-copilot-plugin",
+  "defaultBranch": "main",
+  "localPathHint": "F:\\GitHub\\mcpserver-copilot-plugin",
+  "sourceCommit": "b63eed9cac35d843f0ebc9600329bf56061896f2",
+  "parameterSchema": "{\"type\":\"object\",\"properties\":{\"targetParent\":{\"type\":\"string\",\"description\":\"Parent directory where the plugin repository should be cloned or updated\"}},\"required\":[\"targetParent\"]}",
+  "commandTemplate": "pwsh -NoLogo -NoProfile -NonInteractive -Command \"$ErrorActionPreference='Stop'; $parent='{{targetParent}}'; $name='mcpserver-copilot-plugin'; $repo='https://github.com/sharpninja/mcpserver-copilot-plugin.git'; New-Item -ItemType Directory -Force -Path $parent | Out-Null; $path=Join-Path $parent $name; if(Test-Path (Join-Path $path '.git')){ git -C $path pull --ff-only } elseif(Test-Path $path){ throw ($path + ' exists but is not a git repository') } else { git clone $repo $path }\""
+}
